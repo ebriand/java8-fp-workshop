@@ -1,5 +1,6 @@
 package fr.zenika.fp;
 
+import java.util.Objects;
 import java.util.Optional;
 
 public class DBZCharacter {
@@ -40,5 +41,25 @@ public class DBZCharacter {
 
     public Optional<String> getSpecialMove() {
         return specialMove;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        DBZCharacter that = (DBZCharacter) o;
+        return Objects.equals(name, that.name);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(name);
+    }
+
+    @Override
+    public String toString() {
+        return "DBZCharacter{" +
+                "name='" + name + '\'' +
+                '}';
     }
 }
