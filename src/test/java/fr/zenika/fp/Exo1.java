@@ -4,14 +4,10 @@ import org.junit.Before;
 import org.junit.Test;
 
 import java.util.ArrayList;
-import java.util.Comparator;
 import java.util.List;
-import java.util.Optional;
-import java.util.function.Function;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
-import static java.util.Arrays.asList;
 import static org.hamcrest.Matchers.*;
 import static org.junit.Assert.assertThat;
 
@@ -50,11 +46,11 @@ public class Exo1 {
 
     @Test
     public void shouldBeOver9000() {
-        // TODO: Implement lambda to find who is over NINE THOUSANDS!!!!
+        // TODO: Implement lambda to find whose power is over NINE THOUSANDS!!!!
         List<DBZCharacter> powerfulCharacters = dbzCharacters;
 
         assertThat(powerfulCharacters, hasItems(sonGoku, vegeta));
-        assertThat(powerfulCharacters, not(hasItems(krillin,sonGohan, piccolo)));
+        assertThat(powerfulCharacters, not(hasItems(krillin, sonGohan, piccolo)));
     }
 
     @Test
@@ -62,15 +58,15 @@ public class Exo1 {
         // TODO: Implement lambda to extract names
         List<String> characterNames = new ArrayList<>();
 
-        assertThat(characterNames, hasItems("Son Goku", "Son Gohan", "Piccolo", "Krillin", "Vegetas"));
+        assertThat(characterNames, hasItems("Son Goku", "Son Gohan", "Piccolo", "Krillin", "Vegeta"));
     }
 
     @Test
     public void shouldReturnNamesOfPowerfulCharacters() {
-        // TODO: Implement lambda to extract names of powerful characters
+        // TODO: Implement lambda to extract names of powerful characters (over NINE THOUNSANDS!!!!!)
         List<String> characterNames = new ArrayList<>();
 
-        assertThat(characterNames, hasItems("Son Goku", "Vegetas"));
+        assertThat(characterNames, hasItems("Son Goku", "Vegeta"));
     }
 
     @Test
@@ -86,7 +82,7 @@ public class Exo1 {
         // TODO: Implement lambda to return max power
         int maxPower = 0;
 
-        assertThat(maxPower, is(11250.2));
+        assertThat(maxPower, is(32000));
     }
 
     @Test
@@ -103,19 +99,19 @@ public class Exo1 {
         // TODO: Implement lambda to return average power
         double averagePower = 0d;
 
-        assertThat(averagePower, is(32000));
+        assertThat(averagePower, is(11250.2));
     }
 
     @Test
     public void shouldReturnNumberOfSaiyan() {
         // TODO: Implement lambda to return number of saiyan
-        int numberOfSaiyan = 0;
+        long numberOfSaiyan = 0L;
 
-        assertThat(numberOfSaiyan, is(2));
+        assertThat(numberOfSaiyan, is(2L));
     }
 
     @Test
-    public void shouldReturnCharacterNameWhenGivingSpecialMove() throws Exception {
+    public void shouldReturnCharacterNameWhoUseKamehameha() throws Exception {
         // TODO: Implement lambda to return character name when giving special move name
         String characterWhoUseKamehameha = "Kamehameha";
 
