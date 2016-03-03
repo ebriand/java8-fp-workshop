@@ -1,4 +1,4 @@
-package fr.zenika.fp;
+package fr.zenika.fp.exo1;
 
 import org.junit.Before;
 import org.junit.Test;
