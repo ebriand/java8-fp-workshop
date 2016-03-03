@@ -1,4 +1,4 @@
-package fr.zenika.fp;
+package fr.zenika.fp.exo1;
 
 import java.util.Objects;
 import java.util.Optional;

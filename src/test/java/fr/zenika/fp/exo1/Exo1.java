@@ -1,5 +1,6 @@
-package fr.zenika.fp;
+package fr.zenika.fp.exo1;
 
+import org.hamcrest.Matchers;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -41,7 +42,7 @@ public class Exo1 {
         List<DBZCharacter> earthLings = dbzCharacters;
 
         assertThat(earthLings, hasItems(sonGohan, krillin));
-        assertThat(earthLings, not(hasItems(sonGoku, vegeta, piccolo)));
+        assertThat(earthLings, Matchers.not(hasItems(sonGoku, vegeta, piccolo)));
     }
 
     @Test
@@ -50,7 +51,7 @@ public class Exo1 {
         List<DBZCharacter> powerfulCharacters = dbzCharacters;
 
         assertThat(powerfulCharacters, hasItems(sonGoku, vegeta));
-        assertThat(powerfulCharacters, not(hasItems(krillin, sonGohan, piccolo)));
+        assertThat(powerfulCharacters, Matchers.not(hasItems(krillin, sonGohan, piccolo)));
     }
 
     @Test
