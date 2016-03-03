@@ -35,7 +35,7 @@ public class Exo2 {
 
     @Test
     public void shouldFilterTheFirstMessageAndLogTheSecond() {
-        // TODO: Refactor to have only a functional interface filter and no more FilterLogStartingWith implementation
+        // TODO: Refactor to have no more Filter interface and any implementation by using built-in functional interface
         ILogger logger = new SysoutLogger();
         IFilter filter = new FilterLogStartingWith("w");
         ILogger filterLogger = new FilterLogger(filter, logger);
@@ -43,6 +43,7 @@ public class Exo2 {
         filterLogger.log("hello");
         filterLogger.log("world");
         assertThat(outContent.toString(), is("world" + System.getProperty("line.separator")));
+
+        // TODO: Enhance functional interface Logger to take a filter and to have no more FilterLogger
     }
-    
 }
