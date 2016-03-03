@@ -9,7 +9,7 @@ public class FilterLogStartingWith implements IFilter {
     }
 
     @Override
-    public boolean filter(String message) {
+    public boolean accept(String message) {
         return message.startsWith(prefix);
     }
 }

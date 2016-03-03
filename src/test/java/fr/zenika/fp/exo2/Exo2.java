@@ -37,33 +37,12 @@ public class Exo2 {
     public void shouldFilterTheFirstMessageAndLogTheSecond() {
         // TODO: Refactor to have only a functional interface filter and no more FilterLogStartingWith implementation
         ILogger logger = new SysoutLogger();
-        IFilter filter = new FilterLogStartingWith("h");
+        IFilter filter = new FilterLogStartingWith("w");
         ILogger filterLogger = new FilterLogger(filter, logger);
 
         filterLogger.log("hello");
         filterLogger.log("world");
         assertThat(outContent.toString(), is("world" + System.getProperty("line.separator")));
     }
-
-    @Test
-    public void shouldBeLambdaLogger() {
-        // TODO: Develop a LambdaLogger functional interface which can log and take a filter
-
-        // lambdalogger.log("hello");
-
-        assertThat(outContent.toString(), is("hello" + System.getProperty("line.separator")));
-
-    }
-
-    @Test
-    public void shouldBeLambdaLogger2() {
-        // TODO: Develop a LambdaLogger functional interface which can log and take a filter
-
-        // lambdalogger.filter(filter);
-        // lambdalogger.log("hello");
-        // lambdalogger.log("world");
-
-        assertThat(outContent.toString(), is("world" + System.getProperty("line.separator")));
-
-    }
+    
 }

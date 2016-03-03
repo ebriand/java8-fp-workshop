@@ -13,7 +13,7 @@ public class FilterLogger implements ILogger {
 
     @Override
     public void log(String message) {
-        if (!filter.filter(message)) {
+        if (filter.accept(message)) {
             logger.log(message);
         }
     }
