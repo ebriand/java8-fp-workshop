@@ -106,6 +106,17 @@ public class Exo1 {
     }
 
     @Test
+    public void shouldReturnStrongestCharacterByReduce() {
+        // TODO: Implement lambda to sort by power
+        DBZCharacter strongestCharacter =
+                dbzCharacters.stream()
+                    .reduce((dbzCharacter, dbzCharacter2) -> dbzCharacter.getPower() > dbzCharacter2.getPower() ? dbzCharacter : dbzCharacter2)
+                    .map(identity()).orElse(null);
+
+        assertThat(strongestCharacter, is(sonGoku));
+    }
+
+    @Test
     public void shouldReturnNameOfMostPowerfulCharacter() {
         // TODO: Implement lambda to return the name of the most porwerful character
         String mostPowerfulCharacter = dbzCharacters.stream()
