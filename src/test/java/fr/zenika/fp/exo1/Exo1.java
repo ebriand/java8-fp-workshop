@@ -87,13 +87,20 @@ public class Exo1 {
     }
 
     @Test
+    public void shouldReturnStrongestCharacterByReduce() {
+        // TODO: Implement lambda to sort by power
+        DBZCharacter strongestCharacter = null;
+
+        assertThat(strongestCharacter, is(sonGoku));
+    }
+
+    @Test
     public void shouldReturnNameOfMostPowerfulCharacter() {
         // TODO: Implement lambda to return the name of the most porwerful character
         String mostPowerfulCharacter = "";
 
         assertThat(mostPowerfulCharacter, is("Son Goku"));
     }
-
 
     @Test
     public void shouldReturnAveragePower() {
