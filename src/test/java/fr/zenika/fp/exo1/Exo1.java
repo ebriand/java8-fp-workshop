@@ -8,7 +8,6 @@ import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 import static java.util.Comparator.comparing;
-import static java.util.function.Function.identity;
 import static org.hamcrest.Matchers.*;
 import static org.junit.Assert.assertThat;
 
@@ -111,7 +110,7 @@ public class Exo1 {
         DBZCharacter strongestCharacter =
                 dbzCharacters.stream()
                     .reduce((dbzCharacter, dbzCharacter2) -> dbzCharacter.getPower() > dbzCharacter2.getPower() ? dbzCharacter : dbzCharacter2)
-                    .map(identity()).orElse(null);
+                    .orElse(null);
 
         assertThat(strongestCharacter, is(sonGoku));
     }
@@ -164,11 +163,11 @@ public class Exo1 {
         String sonGokuSpecialMove =
                 dbzCharacters.stream()
                         .filter(c -> "Son Goku".equals(c.getName()))
-                        .findFirst().get().getSpecialMove().map(identity()).orElse("");
+                        .findFirst().get().getSpecialMove().orElse("");
         String sonGohanSpecialMove =
                 dbzCharacters.stream()
                         .filter(c -> "Son Gohan".equals(c.getName()))
-                        .findFirst().get().getSpecialMove().map(identity()).orElse("");
+                        .findFirst().get().getSpecialMove().orElse("");
 
         assertThat(sonGokuSpecialMove, is("Kamehameha"));
         assertThat(sonGohanSpecialMove, is(""));
